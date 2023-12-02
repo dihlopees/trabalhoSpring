@@ -25,6 +25,7 @@ public class Student implements Serializable {
     @Column(name = "CPF")
     private String cpf;
 
+
     @OneToMany(mappedBy = "pk.student")
     private List<StudentCourses> studentCourses;
 

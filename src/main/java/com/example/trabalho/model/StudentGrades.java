@@ -1,5 +1,6 @@
 package com.example.trabalho.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import org.hibernate.annotations.Cascade;
 
@@ -19,7 +20,6 @@ public class StudentGrades implements Serializable {
     private Integer idSubject;
 
     private Double grade;
-
     @ManyToOne(fetch = FetchType.LAZY)
     @Cascade( org.hibernate.annotations.CascadeType.ALL)
     private Subject subject;

@@ -1,5 +1,6 @@
 package com.example.trabalho.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.JoinColumn;
@@ -10,6 +11,7 @@ import java.io.Serializable;
 @Embeddable
 public class StudentCoursePK implements Serializable {
 
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_student")
     private Student student;

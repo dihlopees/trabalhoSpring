@@ -20,7 +20,6 @@ public class Course implements Serializable {
     @Column(name = "Name")
     private String name;
 
-    @JsonIgnore
     @OneToMany(mappedBy = "course")
     @Cascade( CascadeType.ALL)
     private List<Subject> subjects;
