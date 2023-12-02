@@ -3,7 +3,28 @@ Trabalho máteria Tópicos especiais em programação
 
 Aluna: Ingrid Lopes R.A: 22.6980-1
 
-# JSON para criar Aluno:
+# Exemplos de como utilizar a API:
+
+# Crie um curso: 
+
+```
+{
+    "name": "criando curso"
+}
+```
+
+# Crie uma matéria:
+
+```
+{
+    "name": "criando materia",
+    "course": {
+        "idCourse": 1
+    }
+}
+```
+
+# Crie um Aluno:
 ```
 {
     "name": "Aluno 1",
@@ -16,11 +37,8 @@ Aluna: Ingrid Lopes R.A: 22.6980-1
            }
        }
     }, 
-    {
-        "pk": {
-           "course": {
-               "idCourse": 2
-           }
-       }
-    }]
+   ]
 }
+```
+
+
