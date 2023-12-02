@@ -12,6 +12,11 @@ public class StudentCourses implements Serializable {
     @EmbeddedId
     private StudentCoursePK pk;
 
+
+    public StudentCourses ( StudentCoursePK pk ) {
+        this.pk = pk;
+    }
+
     public StudentCourses () {
     }
 

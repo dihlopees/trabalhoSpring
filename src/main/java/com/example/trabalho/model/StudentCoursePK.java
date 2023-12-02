@@ -18,6 +18,14 @@ public class StudentCoursePK implements Serializable {
     @JoinColumn(name = "id_course")
     private Course course;
 
+    public StudentCoursePK ( Student student, Course course ) {
+        this.student = student;
+        this.course = course;
+    }
+
+    public StudentCoursePK () {
+    }
+
     public Student getStudent () {
         return student;
     }
