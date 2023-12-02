@@ -20,10 +20,6 @@ public class Course implements Serializable {
     @Column(name = "Name")
     private String name;
 
-    @OneToMany(mappedBy = "course")
-    @Cascade( CascadeType.ALL)
-    private List<Subject> subjects;
-
     public Course () {
     }
 
@@ -43,11 +39,4 @@ public class Course implements Serializable {
         this.name = name;
     }
 
-    public List<Subject> getSubjects () {
-        return subjects;
-    }
-
-    public void setSubjects ( List<Subject> subjects ) {
-        this.subjects = subjects;
-    }
 }

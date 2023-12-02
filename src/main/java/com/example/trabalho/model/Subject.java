@@ -17,16 +17,23 @@ public class Subject implements Serializable {
     @Column(name = "Name")
     private String name;
 
-    @JsonIgnore
-    @ManyToOne(fetch = FetchType.LAZY)
-    @Cascade( CascadeType.ALL)
-    private Course course;
-
     @OneToMany(mappedBy = "subject")
     @Cascade(CascadeType.ALL)
     private List<StudentGrades> studentGrades;
 
+    @ManyToOne(fetch = FetchType.LAZY) // Mapeamento do lado do Subject para o Course
+    @JoinColumn(name = "id_course") // Nome da coluna no banco de dados para a chave estrangeira
+    private Course course;
+
     public Subject () {
+    }
+
+    public Course getCourse () {
+        return course;
+    }
+
+    public void setCourse ( Course course ) {
+        this.course = course;
     }
 
     public Integer getIdSubject () {
@@ -43,14 +50,6 @@ public class Subject implements Serializable {
 
     public void setName ( String name ) {
         this.name = name;
-    }
-
-    public Course getCourse () {
-        return course;
-    }
-
-    public void setCourse ( Course course ) {
-        this.course = course;
     }
 
     public List<StudentGrades> getStudentGrades () {

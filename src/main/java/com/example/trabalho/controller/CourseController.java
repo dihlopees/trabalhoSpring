@@ -59,7 +59,6 @@ public class CourseController {
 
         Course entityToUpdate = entity.get();
         entityToUpdate.setName(course.getName());
-        entityToUpdate.setSubjects(course.getSubjects());
 
         return ResponseEntity.status(HttpStatus.OK).body(service.creates(entityToUpdate));
     }

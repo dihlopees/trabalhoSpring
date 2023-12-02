@@ -16,8 +16,6 @@ public class StudentGrades implements Serializable {
 
     @JoinColumn(name = "id_student")
     private Integer idStudent;
-    @JoinColumn(name = "id_subject")
-    private Integer idSubject;
 
     private Double grade;
     @ManyToOne(fetch = FetchType.LAZY)
@@ -42,14 +40,6 @@ public class StudentGrades implements Serializable {
 
     public void setIdStudent ( Integer idStudent ) {
         this.idStudent = idStudent;
-    }
-
-    public Integer getIdSubject () {
-        return idSubject;
-    }
-
-    public void setIdSubject ( Integer idSubject ) {
-        this.idSubject = idSubject;
     }
 
     public Double getGrade () {

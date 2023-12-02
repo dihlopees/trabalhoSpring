@@ -2,6 +2,7 @@ package com.example.trabalho.controller;
 
 import com.example.trabalho.model.Course;
 import com.example.trabalho.model.Subject;
+import com.example.trabalho.service.CourseService;
 import com.example.trabalho.service.SubjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,8 +19,13 @@ public class SubjectController {
     @Autowired
     private SubjectService service;
 
+    @Autowired
+    private CourseService courseService;
+
     @PostMapping()
     public ResponseEntity<Subject> creates( @RequestBody Subject subject ) {
+        Optional<Course> course = courseService.getOne(subject.getCourse().getIdCourse());
+        subject.setCourse(course.get());
         return ResponseEntity.status(HttpStatus.OK).body(service.creates(subject));
     }
 
@@ -60,7 +66,6 @@ public class SubjectController {
 
         Subject entityToUpdate = entity.get();
         entityToUpdate.setName(subject.getName());
-        entityToUpdate.setCourse(subject.getCourse());
 
         return ResponseEntity.status(HttpStatus.OK).body(service.creates(entityToUpdate));
     }
