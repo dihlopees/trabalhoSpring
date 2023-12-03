@@ -55,3 +55,6 @@ Serviço irá rodar na porta 8082.
 # No método GET /grades veja todas as notas cadastradas para todos os alunos.
 # Para ver o boletim do Aluno, ou seja, todas as notas cadastradas para ele, utilize a rota GET /grades/{id_student}
 
+# Diagrama do banco:
+![image](https://github.com/dihlopees/trabalhoSpring/assets/93411278/55f48f46-5f02-4115-8bca-76ddd2e1205f)
+
