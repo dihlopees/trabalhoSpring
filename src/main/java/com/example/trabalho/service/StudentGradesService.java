@@ -21,7 +21,11 @@ public class StudentGradesService {
         return repository.findAll();
     }
 
-    public Optional<StudentGrades> getOne( Integer id) {
+    public List<StudentGrades> getOneStudentGrade( Integer id) {
+        return repository.findByIdAluno(id);
+    }
+
+    public Optional<StudentGrades> getOne(Integer id) {
         return repository.findById(id);
     }
 
