@@ -27,7 +27,7 @@ public class StudentController {
 
     @PostMapping()
     public ResponseEntity<Object> createsStudent( @RequestBody Student student ) {
-        if (student.getStatus() == null) student.setStatus("Ativo");
+//        if (student.getStatus() == null) student.setStatus("Ativo");
         Student studentCreated = service.creates(student);
 
         List<StudentCourses> listOfCourses = student.getStudentCourses();
@@ -80,7 +80,6 @@ public class StudentController {
         Student entityToUpdate = entity.get();
         entityToUpdate.setName(student.getName());
         entityToUpdate.setCpf(student.getCpf());
-        entityToUpdate.setStatus(student.getStatus());
         entityToUpdate.setLastName(student.getLastName());
         entityToUpdate.setStudentCourses(student.getStudentCourses());
 

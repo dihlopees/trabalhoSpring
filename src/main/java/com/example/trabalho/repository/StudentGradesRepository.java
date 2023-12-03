@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface StudentGradesRepository extends JpaRepository<StudentGrades, Integer> {
-    List<StudentGrades> findByIdAluno( Integer idAluno);
+    List<StudentGrades> findByIdStudent( Integer idStudent);
 }

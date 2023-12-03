@@ -19,9 +19,6 @@ public class Student implements Serializable {
     @Column(name = "Last_Name")
     private String lastName;
 
-    @Column(name = "Status")
-    private String status;
-
     @Column(name = "CPF")
     private String cpf;
 
@@ -54,14 +51,6 @@ public class Student implements Serializable {
 
     public void setLastName ( String lastName ) {
         this.lastName = lastName;
-    }
-
-    public String getStatus () {
-        return status;
-    }
-
-    public void setStatus ( String status ) {
-        this.status = status;
     }
 
     public String getCpf () {

@@ -22,7 +22,7 @@ public class StudentGradesService {
     }
 
     public List<StudentGrades> getOneStudentGrade( Integer id) {
-        return repository.findByIdAluno(id);
+        return repository.findByIdStudent(id);
     }
 
     public Optional<StudentGrades> getOne(Integer id) {

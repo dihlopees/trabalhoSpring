@@ -26,9 +26,12 @@ public class StudentGradesController {
     @PostMapping()
     public ResponseEntity<Object> creates( @RequestBody StudentGrades studentGrades ) {
         if (studentGrades.getGrade() < 0  || studentGrades.getGrade() > 10) return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Nota não pode ser menor que 0 ou maior que 10.");
-        Integer teste = studentGrades.getSubject().getIdSubject();
-        Optional<Subject> teste2 = subjectService.getOne(teste);
-        studentGrades.setSubject(teste2.get());
+        Integer subjectId = studentGrades.getSubject().getIdSubject();
+        Optional<Subject> relationWithSubject = subjectService.getOne(subjectId);
+        studentGrades.setSubject(relationWithSubject.get());
+
+        if (studentGrades.getGrade() >= 7) studentGrades.setStatus("Aprovado");
+        else studentGrades.setStatus("Reprovado");
         return ResponseEntity.status(HttpStatus.OK).body(service.creates(studentGrades));
     }
 
@@ -74,6 +77,9 @@ public class StudentGradesController {
         entityToUpdate.setGrade(studentGrades.getGrade());
         entityToUpdate.setSubject(studentGrades.getSubject());
         entityToUpdate.setIdStudent(studentGrades.getIdStudent());
+
+        if (studentGrades.getGrade() >= 7) entityToUpdate.setStatus("Aprovado");
+        else entityToUpdate.setStatus("Reprovado");
 
         return ResponseEntity.status(HttpStatus.OK).body(service.creates(entityToUpdate));
     }

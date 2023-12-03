@@ -18,12 +18,23 @@ public class StudentGrades implements Serializable {
     private Integer idStudent;
 
     private Double grade;
+
+    private String status;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @Cascade( org.hibernate.annotations.CascadeType.ALL)
     private Subject subject;
 
 
     public StudentGrades () {
+    }
+
+    public String getStatus () {
+        return status;
+    }
+
+    public void setStatus ( String status ) {
+        this.status = status;
     }
 
     public Integer getIdStudentGrades () {
