@@ -1,11 +1,13 @@
-# trabalho Java com Spring Boot
-Trabalho máteria Tópicos especiais em programação
+# API Java com Spring Boot - Boletim Escolar
+Trabalho submetido para máteria de tópicos especiais em programação.
 
 Aluna: Ingrid Lopes R.A: 22.6980-1
 
 # JSON de exemplos para utilizar na API:
 
-# Crie um curso: 
+Serviço irá rodar na porta 8082.
+
+# Crie um curso em POST /course: 
 
 ```
 {
@@ -13,7 +15,7 @@ Aluna: Ingrid Lopes R.A: 22.6980-1
 }
 ```
 
-# Crie uma matéria:
+# Crie uma matéria em POST /subject:
 
 ```
 {
@@ -24,7 +26,7 @@ Aluna: Ingrid Lopes R.A: 22.6980-1
 }
 ```
 
-# Crie um Aluno:
+# Crie um Aluno em POST /student:
 ```
 {
     "name": "Aluno 1",
@@ -40,7 +42,7 @@ Aluna: Ingrid Lopes R.A: 22.6980-1
    ]
 }
 ```
-# Vincule uma nota ao Aluno:
+# Vincule uma nota ao Aluno em POST /grades:
 ```
 {
     "idStudent": 1,
@@ -50,6 +52,6 @@ Aluna: Ingrid Lopes R.A: 22.6980-1
     }
 }
 ```
-# No método get /grades veja todas as notas cadastradas para todos os alunos.
-# Para ver o boletim do Aluno, ou seja, todas as notas cadastradas para ele, utilize a rota /grades/{id_student}
+# No método GET /grades veja todas as notas cadastradas para todos os alunos.
+# Para ver o boletim do Aluno, ou seja, todas as notas cadastradas para ele, utilize a rota GET /grades/{id_student}
 
