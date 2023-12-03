@@ -3,7 +3,7 @@ Trabalho máteria Tópicos especiais em programação
 
 Aluna: Ingrid Lopes R.A: 22.6980-1
 
-# Exemplos de como utilizar a API:
+# JSON de exemplos para utilizar na API:
 
 # Crie um curso: 
 
@@ -40,5 +40,16 @@ Aluna: Ingrid Lopes R.A: 22.6980-1
    ]
 }
 ```
-
+# Vincule uma nota ao Aluno:
+```
+{
+    "idStudent": 1,
+    "grade": 7.5,
+    "subject": {
+        "idSubject": 1
+    }
+}
+```
+# No método get /grades veja todas as notas cadastradas para todos os alunos.
+# Para ver o boletim do Aluno, ou seja, todas as notas cadastradas para ele, utilize a rota /grades/{id_student}
 
